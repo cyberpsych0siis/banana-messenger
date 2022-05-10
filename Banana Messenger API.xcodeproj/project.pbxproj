@@ -13,6 +13,19 @@
 		C9AF23E72829721A0081FC9E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF23E62829721A0081FC9E /* Preview Assets.xcassets */; };
 		C9AF23E92829721A0081FC9E /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23E82829721A0081FC9E /* Persistence.swift */; };
 		C9AF23EC2829721A0081FC9E /* Banana_Messenger_API.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23EA2829721A0081FC9E /* Banana_Messenger_API.xcdatamodeld */; };
+		C9AF23F42829725D0081FC9E /* Ajax.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23F32829725D0081FC9E /* Ajax.swift */; };
+		C9AF23F6282972E80081FC9E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23F5282972E80081FC9E /* MainView.swift */; };
+		C9AF23F9282976860081FC9E /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23F8282976860081FC9E /* Models.swift */; };
+		C9AF23FD28297A7D0081FC9E /* LoginMask.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23FC28297A7D0081FC9E /* LoginMask.swift */; };
+		C9AF2400282983AB0081FC9E /* KeychainAccess in Frameworks */ = {isa = PBXBuildFile; productRef = C9AF23FF282983AB0081FC9E /* KeychainAccess */; };
+		C9AF240228299DC70081FC9E /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF240128299DC70081FC9E /* SignupView.swift */; };
+		C9AF24042829A3110081FC9E /* EncryptionLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF24032829A3110081FC9E /* EncryptionLibrary.swift */; };
+		C9AF24062829A3690081FC9E /* CryptoSingleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF24052829A3690081FC9E /* CryptoSingleton.swift */; };
+		C9AF24082829B02D0081FC9E /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF24072829B02D0081FC9E /* MessagesView.swift */; };
+		C9AF240B2829B4510081FC9E /* JWTDecode in Frameworks */ = {isa = PBXBuildFile; productRef = C9AF240A2829B4510081FC9E /* JWTDecode */; };
+		C9AF240E2829CC690081FC9E /* ComposeMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF240D2829CC690081FC9E /* ComposeMessage.swift */; };
+		C9AF24102829CDF60081FC9E /* MessageApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF240F2829CDF60081FC9E /* MessageApi.swift */; };
+		C9AF24122829D4600081FC9E /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF24112829D4600081FC9E /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +36,17 @@
 		C9AF23E62829721A0081FC9E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C9AF23E82829721A0081FC9E /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		C9AF23EB2829721A0081FC9E /* Banana_Messenger_API.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Banana_Messenger_API.xcdatamodel; sourceTree = "<group>"; };
+		C9AF23F32829725D0081FC9E /* Ajax.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ajax.swift; sourceTree = "<group>"; };
+		C9AF23F5282972E80081FC9E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		C9AF23F8282976860081FC9E /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		C9AF23FC28297A7D0081FC9E /* LoginMask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginMask.swift; sourceTree = "<group>"; };
+		C9AF240128299DC70081FC9E /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		C9AF24032829A3110081FC9E /* EncryptionLibrary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncryptionLibrary.swift; sourceTree = "<group>"; };
+		C9AF24052829A3690081FC9E /* CryptoSingleton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoSingleton.swift; sourceTree = "<group>"; };
+		C9AF24072829B02D0081FC9E /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		C9AF240D2829CC690081FC9E /* ComposeMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeMessage.swift; sourceTree = "<group>"; };
+		C9AF240F2829CDF60081FC9E /* MessageApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageApi.swift; sourceTree = "<group>"; };
+		C9AF24112829D4600081FC9E /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +54,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AF240B2829B4510081FC9E /* JWTDecode in Frameworks */,
+				C9AF2400282983AB0081FC9E /* KeychainAccess in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,8 +81,11 @@
 		C9AF23DE282972190081FC9E /* Banana Messenger API */ = {
 			isa = PBXGroup;
 			children = (
+				C9AF23F7282976730081FC9E /* Models */,
 				C9AF23DF282972190081FC9E /* Banana_Messenger_APIApp.swift */,
+				C9AF23F22829724C0081FC9E /* Api */,
 				C9AF23E1282972190081FC9E /* ContentView.swift */,
+				C9AF23FA28297A6A0081FC9E /* Views */,
 				C9AF23E32829721A0081FC9E /* Assets.xcassets */,
 				C9AF23E82829721A0081FC9E /* Persistence.swift */,
 				C9AF23EA2829721A0081FC9E /* Banana_Messenger_API.xcdatamodeld */,
@@ -71,6 +100,54 @@
 				C9AF23E62829721A0081FC9E /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C9AF23F22829724C0081FC9E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF23F32829725D0081FC9E /* Ajax.swift */,
+				C9AF24032829A3110081FC9E /* EncryptionLibrary.swift */,
+				C9AF24052829A3690081FC9E /* CryptoSingleton.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		C9AF23F7282976730081FC9E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF23F8282976860081FC9E /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9AF23FA28297A6A0081FC9E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF23F5282972E80081FC9E /* MainView.swift */,
+				C9AF240C2829B57C0081FC9E /* Messages */,
+				C9AF240128299DC70081FC9E /* SignupView.swift */,
+				C9AF23FB28297A730081FC9E /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9AF23FB28297A730081FC9E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF23FC28297A7D0081FC9E /* LoginMask.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		C9AF240C2829B57C0081FC9E /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				C9AF24072829B02D0081FC9E /* MessagesView.swift */,
+				C9AF24112829D4600081FC9E /* Settings.swift */,
+				C9AF240F2829CDF60081FC9E /* MessageApi.swift */,
+				C9AF240D2829CC690081FC9E /* ComposeMessage.swift */,
+			);
+			path = Messages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -89,6 +166,10 @@
 			dependencies = (
 			);
 			name = "Banana Messenger API";
+			packageProductDependencies = (
+				C9AF23FF282983AB0081FC9E /* KeychainAccess */,
+				C9AF240A2829B4510081FC9E /* JWTDecode */,
+			);
 			productName = "Banana Messenger API";
 			productReference = C9AF23DC282972190081FC9E /* Banana Messenger API.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +198,10 @@
 				Base,
 			);
 			mainGroup = C9AF23D3282972190081FC9E;
+			packageReferences = (
+				C9AF23FE282983AB0081FC9E /* XCRemoteSwiftPackageReference "KeychainAccess" */,
+				C9AF24092829B4510081FC9E /* XCRemoteSwiftPackageReference "JWTDecode.swift" */,
+			);
 			productRefGroup = C9AF23DD282972190081FC9E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -143,10 +228,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9AF24102829CDF60081FC9E /* MessageApi.swift in Sources */,
+				C9AF240E2829CC690081FC9E /* ComposeMessage.swift in Sources */,
+				C9AF240228299DC70081FC9E /* SignupView.swift in Sources */,
+				C9AF24082829B02D0081FC9E /* MessagesView.swift in Sources */,
 				C9AF23E92829721A0081FC9E /* Persistence.swift in Sources */,
+				C9AF24062829A3690081FC9E /* CryptoSingleton.swift in Sources */,
+				C9AF23F6282972E80081FC9E /* MainView.swift in Sources */,
+				C9AF23F42829725D0081FC9E /* Ajax.swift in Sources */,
 				C9AF23EC2829721A0081FC9E /* Banana_Messenger_API.xcdatamodeld in Sources */,
+				C9AF24122829D4600081FC9E /* Settings.swift in Sources */,
 				C9AF23E2282972190081FC9E /* ContentView.swift in Sources */,
 				C9AF23E0282972190081FC9E /* Banana_Messenger_APIApp.swift in Sources */,
+				C9AF23F9282976860081FC9E /* Models.swift in Sources */,
+				C9AF24042829A3110081FC9E /* EncryptionLibrary.swift in Sources */,
+				C9AF23FD28297A7D0081FC9E /* LoginMask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +379,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,6 +409,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -347,6 +445,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C9AF23FE282983AB0081FC9E /* XCRemoteSwiftPackageReference "KeychainAccess" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kishikawakatsumi/KeychainAccess.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		C9AF24092829B4510081FC9E /* XCRemoteSwiftPackageReference "JWTDecode.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/auth0/JWTDecode.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C9AF23FF282983AB0081FC9E /* KeychainAccess */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9AF23FE282983AB0081FC9E /* XCRemoteSwiftPackageReference "KeychainAccess" */;
+			productName = KeychainAccess;
+		};
+		C9AF240A2829B4510081FC9E /* JWTDecode */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C9AF24092829B4510081FC9E /* XCRemoteSwiftPackageReference "JWTDecode.swift" */;
+			productName = JWTDecode;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		C9AF23EA2829721A0081FC9E /* Banana_Messenger_API.xcdatamodeld */ = {

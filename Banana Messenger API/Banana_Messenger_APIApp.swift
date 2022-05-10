@@ -10,10 +10,10 @@ import SwiftUI
 @main
 struct Banana_Messenger_APIApp: App {
     let persistenceController = PersistenceController.shared
-
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView()
                 .environment(\.managedObjectContext, persistenceController.container.viewContext)
         }
     }
