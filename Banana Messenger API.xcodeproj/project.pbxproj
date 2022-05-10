@@ -126,6 +126,7 @@
 				C9AF23F5282972E80081FC9E /* MainView.swift */,
 				C9AF240C2829B57C0081FC9E /* Messages */,
 				C9AF240128299DC70081FC9E /* SignupView.swift */,
+				C9AF24112829D4600081FC9E /* Settings.swift */,
 				C9AF23FB28297A730081FC9E /* Components */,
 			);
 			path = Views;
@@ -143,7 +144,6 @@
 			isa = PBXGroup;
 			children = (
 				C9AF24072829B02D0081FC9E /* MessagesView.swift */,
-				C9AF24112829D4600081FC9E /* Settings.swift */,
 				C9AF240F2829CDF60081FC9E /* MessageApi.swift */,
 				C9AF240D2829CC690081FC9E /* ComposeMessage.swift */,
 			);

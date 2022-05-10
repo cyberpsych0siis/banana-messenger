@@ -6,16 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct MessagesView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \BMessage.timestamp, ascending: false)],
         animation: .default)
     private var messages: FetchedResults<BMessage>
     
     @State var showComposeScreen = false
+    
+    static var downloadOldMessagesFlag = false
     
     var body: some View {
 //        NavigationView {
@@ -46,9 +49,16 @@ struct MessagesView: View {
         }
         .onAppear() {
             print("Ajax.shared.isLoggedIn: \(Ajax.shared.isLoggedIn)")
-            Ajax.shared.fetch(type: [MessageFromServer].self, suffix: "/messages/inbox") {
-                messages in
-    insertNewMessages(messages)
+            if Ajax.shared.isLoggedIn {
+//                if MessagesView.downloadOldMessagesFlag {
+//                    downloadOld()
+//                    MessagesView.downloadOldMessagesFlag = false
+//                } else {
+                Ajax.shared.fetch(type: [MessageFromServer].self, suffix: "/messages/inbox") {
+                    messages in
+                    insertNewMessages(messages)
+//                }
+                }
             }
         }
         .sheet(isPresented: $showComposeScreen) {
@@ -90,14 +100,38 @@ struct MessagesView: View {
             do {
                 try viewContext.save()
             } catch let error {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 print(error.localizedDescription)
                 return
             }
         }
     }
     
+    private func deleteAllMessages() {
+//        delete all messages
+        _ = messages.map {
+            m in
+            viewContext.delete(m)
+        }
+        
+        do {
+            try viewContext.save()
+        } catch let error {
+            print(error.localizedDescription)
+            return
+        }
+        
+//        Ajax.shared.fetch(type: [MessageFromServer].self, suffix: "/messages/all") {
+//            messages in
+//                insertNewMessages(messages)
+//        }
+    }
+    
+    func downloadOld() {
+        Ajax.shared.fetch(type: [MessageFromServer].self, suffix: "/messages/all") {
+            messages in
+            insertNewMessages(messages)
+        }
+    }
 }
 
 struct MessagesView_Previews: PreviewProvider {

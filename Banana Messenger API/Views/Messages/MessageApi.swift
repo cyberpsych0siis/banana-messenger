@@ -13,7 +13,7 @@ extension Ajax {
         //encryption here
         
         let args = ["msg": msg]
-        self.push(type: MessageFromServer.self, suffix: "/messages/\(to)", arguments: args) {
+        self.push(type: MessageFromServer.self, suffix: "/messages/acct:\(to)", arguments: args) {
             data in
             print(data)
         }

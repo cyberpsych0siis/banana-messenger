@@ -7,39 +7,54 @@
 
 import Foundation
 import KeychainAccess
+import JWTDecode
 
 class Ajax: ObservableObject {
     static let shared = Ajax()
     @Published var keychain = Keychain(service: "nft.cyberpsych0siis.Banana-Messenger-API")
     
-//#if DEBUG
-    // Debug-only code
-//    var serverUrl = "http://localhost:8080"
-//#else
-    var serverUrl = "https://rillo5000.com"
-//#endif
+    @Published var serverUrl: String = "https://rillo5000.com"
     
     @Published var isLoggedIn: Bool = false
     @Published var isLoading: Bool = false
     
+    @Published var lastError: String? = nil
+    
+    var error: Bool {
+        get {
+            return lastError != nil
+        }
+        set {
+            lastError = nil
+        }
+    }
+    
     init() {
         let auth = keychain["accessToken"]
+//        self.serverUrl = jwt.issuer!
+        let sUrl = self.keychain["serverUrl"]
         
         self.isLoggedIn = auth != nil
-        print(self.isLoggedIn)
+        
+        if sUrl != nil {
+            self.serverUrl = sUrl!
+        } else {
+            self.serverUrl = "https://rillo5000.com"
+        }
     }
     
     func fetch<T: Codable>(type: T.Type, suffix: String, _ callback: @escaping (T) -> ()) {
         sendRequest(type: type, suffix: suffix, body: nil, callback)
     }
     
-    func push<T: Codable>(type: T.Type, suffix: String, arguments: [String: String], _ callback: @escaping (T) ->()) {
+    func push<T: Codable>(type: T.Type, suffix: String, arguments: [String: String]?, _ callback: @escaping (T) ->()) {
         sendRequest(type: type, suffix: suffix, body: arguments, callback)
     }
     
     private func sendRequest<T: Codable>(type: T.Type, suffix: String, body: [String: String]?, _ cb: @escaping (T) -> ()) {
         guard let url = URL(string: "\(serverUrl)\(suffix)") else {
             print("Failed with: InvalidUrl")
+            self.lastError = "Invalid Request URL"
             return
         }
         
@@ -64,6 +79,7 @@ class Ajax: ObservableObject {
             data, response, error in
             if error != nil {
                 print(error!.localizedDescription)
+                self.lastError = error!.localizedDescription
                 return
             }
             
@@ -79,10 +95,13 @@ class Ajax: ObservableObject {
                     return
                 } else {
                     print(s.errorData!)
+                    self.lastError = s.errorData!.message
                     return
                 }
             } catch let error {
                 print(error.localizedDescription)
+                self.lastError = error.localizedDescription
+                print(data.base64EncodedString())
                 return
             }
         }
@@ -97,18 +116,33 @@ extension Ajax {
         self.push(type: LoginToken.self, suffix: "/login", arguments: args) {
             data in
             print("[Login] Success!")
-            self.isLoggedIn = true
-            
-            self.keychain["accessToken"] = data.token
-            
-            Ajax.shared.isLoggedIn = true
+
+            do {
+                let jwt = try decode(jwt: data.token)
+                self.serverUrl = jwt.issuer!
+                self.keychain["serverUrl"] = jwt.issuer!
+                
+                self.isLoggedIn = true
+                self.keychain["accessToken"] = data.token
+//                MessagesView.downloadOldMessagesFlag = true
+                
+//                Ajax.shared.isLoggedIn = true
+            } catch let error {
+                print(error.localizedDescription)
+                return
+            }
         }
     }
     
     func logout() {
-        self.isLoggedIn = false
-        Ajax.shared.isLoggedIn = false
-        self.keychain["accessToken"] = nil
+//        self.push(type: LoginToken.self, suffix: "/logout", arguments: nil)
+        
+        self.push(type: LoginToken.self, suffix: "/logout", arguments: nil) {
+            token in
+            self.isLoggedIn = false
+//            Ajax.shared.isLoggedIn = false
+            self.keychain["accessToken"] = nil
+        }
     }
     
     func signup(username: String, password: String) {

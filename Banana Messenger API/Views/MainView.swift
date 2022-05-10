@@ -10,10 +10,11 @@ import SwiftUI
 struct MainView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State var username: String = "root"
-    @State var password: String = "root"
+    @State var username: String = ""
+    @State var password: String = ""
+    @State var homeServer: String = "https://rillo5000.com"
     @State var showSignupSheet: Bool = false
-    @ObservedObject var ajax = Ajax()
+    @ObservedObject var ajax = Ajax.shared
     
     var body: some View {
         VStack {
@@ -52,6 +53,7 @@ struct MainView: View {
                                 Text("Settings")
                             }
                         }
+                        .tag(1)
                 }
                 
             } else {
@@ -70,6 +72,10 @@ struct MainView: View {
                             .textFieldStyle(.roundedBorder)
                         SecureField("Password", text: $password)
                             .textFieldStyle(.roundedBorder)
+                        TextField("Homeserver", text: $homeServer)
+                            .autocapitalization(.none)
+                            .textFieldStyle(.roundedBorder)
+                        
                     }
                     .padding()
                     
@@ -78,7 +84,7 @@ struct MainView: View {
                     Button(action: login) {
                         Text("Login")
                     }
-                    .disabled(username == "" && password == "")
+                    .disabled(username == "" || password == "" || homeServer == "")
                     .buttonStyle(.borderedProminent)
 
                     Button(action: showSignup) {
@@ -89,9 +95,13 @@ struct MainView: View {
                 }
             }
         }
+        .alert(isPresented: $ajax.error){
+            Alert(title: Text("Error"), message: Text(ajax.lastError!), dismissButton: .default(Text("Okay")))
+        }
         .sheet(isPresented: self.$showSignupSheet) {
             SignupView(isShown: self.$showSignupSheet, ajax: self.ajax)
         }
+        
     }
     
     func showSignup() {
@@ -99,6 +109,7 @@ struct MainView: View {
     }
     
     func login() {
+        ajax.serverUrl = self.homeServer
         ajax.login(username: username, password: password)
     }
     
