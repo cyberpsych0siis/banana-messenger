@@ -46,6 +46,13 @@ struct MainView: View {
                             }
                         }
                         .tag(0)
+//                    MessagesGroupedView()
+//                        .tabItem {
+//                            VStack {
+//                                Image("message")
+//                                Text("Conversations")
+//                            }
+//                        }
                     Settings()
                         .tabItem {
                             VStack {
@@ -53,7 +60,7 @@ struct MainView: View {
                                 Text("Settings")
                             }
                         }
-                        .tag(1)
+                        .tag(2)
                 }
                 
             } else {

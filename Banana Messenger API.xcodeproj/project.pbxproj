@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C900CBB0282C248D00567BF1 /* MessagesGroupedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C900CBAF282C248D00567BF1 /* MessagesGroupedView.swift */; };
 		C9AF23E0282972190081FC9E /* Banana_Messenger_APIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23DF282972190081FC9E /* Banana_Messenger_APIApp.swift */; };
 		C9AF23E2282972190081FC9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AF23E1282972190081FC9E /* ContentView.swift */; };
 		C9AF23E42829721A0081FC9E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C9AF23E32829721A0081FC9E /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C900CBAF282C248D00567BF1 /* MessagesGroupedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesGroupedView.swift; sourceTree = "<group>"; };
 		C9AF23DC282972190081FC9E /* Banana Messenger API.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Banana Messenger API.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AF23DF282972190081FC9E /* Banana_Messenger_APIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Banana_Messenger_APIApp.swift; sourceTree = "<group>"; };
 		C9AF23E1282972190081FC9E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			isa = PBXGroup;
 			children = (
 				C9AF24072829B02D0081FC9E /* MessagesView.swift */,
+				C900CBAF282C248D00567BF1 /* MessagesGroupedView.swift */,
 				C9AF240F2829CDF60081FC9E /* MessageApi.swift */,
 				C9AF240D2829CC690081FC9E /* ComposeMessage.swift */,
 			);
@@ -241,6 +244,7 @@
 				C9AF23E2282972190081FC9E /* ContentView.swift in Sources */,
 				C9AF23E0282972190081FC9E /* Banana_Messenger_APIApp.swift in Sources */,
 				C9AF23F9282976860081FC9E /* Models.swift in Sources */,
+				C900CBB0282C248D00567BF1 /* MessagesGroupedView.swift in Sources */,
 				C9AF24042829A3110081FC9E /* EncryptionLibrary.swift in Sources */,
 				C9AF23FD28297A7D0081FC9E /* LoginMask.swift in Sources */,
 			);
@@ -299,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -353,7 +357,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -21,15 +21,6 @@ struct MessagesView: View {
     static var downloadOldMessagesFlag = false
     
     var body: some View {
-//        NavigationView {
-//        .onAppear() {
-//            print("Ajax.shared.isLoggedIn: \(Ajax.shared.isLoggedIn)")
-//            Ajax.shared.fetch(type: [MessageFromServer].self, suffix: "/messages/inbox") {
-//                messages in
-//
-//                insertNewMessages(messages)
-//            }
-//        }
         NavigationView {
             List {
                 ForEach(messages) {
